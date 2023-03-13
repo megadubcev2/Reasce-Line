@@ -7,9 +7,16 @@
 
 import Foundation
 
-struct Message: Identifiable, Codable{
-    var id: String
-    var text: String
-    var received: Bool
-    var timestamp: Date
+public struct Message: Codable{
+    public var text: String
+    public var sender: Sender
+    public var timeToWrite: Int
+    public var timeToWait: Int
+    
+    public init(text: String, sender: Sender, timeToWait: Int = 1) {
+        self.text = text
+        self.sender = sender
+        self.timeToWrite = 1 + text.count/10
+        self.timeToWait = timeToWait
+    }
 }

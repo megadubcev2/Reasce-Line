@@ -7,9 +7,11 @@
 
 import Foundation
 
-struct Story : Identifiable, Codable{
-    var id: String
-    var author: String
-    var ImageUrl: String
-    var name : String
+public struct Story : Identifiable, Codable{
+    public var id: String
+    public var author: String
+    public var profileName : String
+    public var profileImageUrl: String
+    public var firstStoryNode: StoryNode
+    public var allStoryNodesDictionary: [Int: StoryNode]
 }

@@ -24,7 +24,7 @@ struct DialogScreen: View {
                 }
                 .padding(.top,10)
                 .background(.white)
-                .cornerRadius(50, corners: [.topLeft,.topRight])
+//                .cornerRadius(50, corners: [.topLeft,.topRight])
             }.background(Color("Color"))
                 VStack(spacing: -25){
                     ForEach(answerArray, id:\.self){
