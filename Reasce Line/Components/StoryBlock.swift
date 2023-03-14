@@ -10,7 +10,14 @@ import SwiftUI
 struct StoryBlock: View {
     @StateObject var chat: Chat
     var body: some View {
-        NavigationLink(destination: DialogScreen(chat: chat), label: {
+        NavigationLink {
+            DialogScreen(chat: chat)
+                         .toolbar{
+                             ToolbarItemGroup(placement: .principal, content: {
+                                 TitleRow(name: chat.profileName)
+                             })
+                         }
+                 } label: {
             HStack{
                 AsyncImage(url: URL(string: chat.profileImageUrl)){
                     image in image.resizable().aspectRatio(contentMode: .fill).aspectRatio(contentMode: .fill)
@@ -25,7 +32,7 @@ struct StoryBlock: View {
                 }
                 .frame(maxWidth: .infinity,alignment: .leading)
             }.padding(.horizontal)
-        })
+                 };
     }
 }
 

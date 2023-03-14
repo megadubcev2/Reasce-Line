@@ -15,7 +15,6 @@ struct DialogScreen: View {
     var body: some View {
         VStack {
             VStack{
-                TitleRow()
                 ScrollView{
                     ForEach(chat.dialogHistory, id:\.self){
                         message in MessageBubble(message: message)
@@ -32,8 +31,7 @@ struct DialogScreen: View {
                     }
                 }.background(Color("fMessage")).padding(.top,-9)
         
-        }.navigationBarBackButtonHidden(true)
-        
+        }
     }
 }
 

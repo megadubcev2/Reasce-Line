@@ -12,10 +12,10 @@ struct SettingsScreen: View {
             VStack(spacing: 0){
                 SimpleToggle(name: "Музыка")
                 SimpleToggle(name: "Звук")
-                Button{
-                    
-                }label: {
-                    Text("Режим разработчика").foregroundColor(.black).frame(maxWidth: .infinity,alignment: .leading).padding().background(Color("Color"))
+                NavigationLink {
+                                     RegisrtationScreen()
+                                 } label: {
+                                     Text("Режим разработчика").foregroundColor(.white).frame(maxWidth: .infinity,alignment: .leading).padding().background(.black)
                 }
                 Spacer()
             }

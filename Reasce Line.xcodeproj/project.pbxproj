@@ -17,6 +17,7 @@
 		49971AAF29BE85F100947461 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49971AAE29BE85F100947461 /* Chat.swift */; };
 		49971AB129BED09200947461 /* Sender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49971AB029BED09200947461 /* Sender.swift */; };
 		4997361029BFBD54007237F0 /* ChatsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4997360F29BFBD54007237F0 /* ChatsController.swift */; };
+		499BA9F129C079E300D01A1F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499BA9F029C079E300D01A1F /* Extensions.swift */; };
 		499BF85529C026C600B48521 /* ChatsArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499BF85429C026C600B48521 /* ChatsArray.swift */; };
 		B403CA4929939CCC00F9CFBA /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B403CA4829939CCC00F9CFBA /* SettingsScreen.swift */; };
 		B403CA4B29939D3B00F9CFBA /* SimpleToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B403CA4A29939D3B00F9CFBA /* SimpleToggle.swift */; };
@@ -48,6 +49,7 @@
 		49971AAE29BE85F100947461 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 		49971AB029BED09200947461 /* Sender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sender.swift; sourceTree = "<group>"; };
 		4997360F29BFBD54007237F0 /* ChatsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsController.swift; sourceTree = "<group>"; };
+		499BA9F029C079E300D01A1F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		499BF85429C026C600B48521 /* ChatsArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsArray.swift; sourceTree = "<group>"; };
 		B403CA4829939CCC00F9CFBA /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
 		B403CA4A29939D3B00F9CFBA /* SimpleToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleToggle.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				B4A6B544298FCE4600B87E09 /* Models */,
 				4904867F297FFFD6007075BF /* Assets.xcassets */,
 				49048681297FFFD6007075BF /* Preview Content */,
+				499BA9F029C079E300D01A1F /* Extensions.swift */,
 			);
 			path = "Reasce Line";
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				49971AB129BED09200947461 /* Sender.swift in Sources */,
 				49971AAF29BE85F100947461 /* Chat.swift in Sources */,
 				B403CA4F2993BFD800F9CFBA /* RegistrationScreen.swift in Sources */,
+				499BA9F129C079E300D01A1F /* Extensions.swift in Sources */,
 				B4AE2AE329BB9F1400AB29AD /* CompletedStories.swift in Sources */,
 				B4A6B556299103F300B87E09 /* Story.swift in Sources */,
 				B4A6B5582991062D00B87E09 /* StoryBlock.swift in Sources */,

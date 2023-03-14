@@ -18,7 +18,7 @@ struct MenuScreen: View {
                     Spacer()
                 }
                 .tabItem {
-                    Label("Активные", systemImage: "tray.and.arrow.down.fill")
+                    Label("Активные", systemImage: "ellipsis.message")
                 }
                 .toolbar(.visible, for: .tabBar)
 
@@ -32,7 +32,7 @@ struct MenuScreen: View {
                     Spacer()
                 }
                 .tabItem {
-                    Label("Новые", systemImage: "tray.and.arrow.up.fill")
+                    Label("Новые", systemImage: "plus.message")
                 }
                 .toolbar(.visible, for: .tabBar)
 
@@ -46,7 +46,7 @@ struct MenuScreen: View {
                     Spacer()
                 }
                 .tabItem {
-                    Label("Завершенные", systemImage: "person.crop.circle.fill")
+                    Label("Завершенные", systemImage: "checkmark.message")
                 }
                 .toolbar(.visible, for: .tabBar)
 
