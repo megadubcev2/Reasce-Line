@@ -13,7 +13,6 @@ struct DialogScreen: View {
     var body: some View {
         VStack {
             VStack{
-                TitleRow()
                 ScrollView{
                     ForEach(messageArray, id:\.self){
                         text in MessageBubble(message: Message(id: "1", text: text, received: true, timestamp: Date()))
@@ -32,8 +31,7 @@ struct DialogScreen: View {
                     }
                 }.background(Color("fMessage")).padding(.top,-9)
         
-        }.navigationBarBackButtonHidden(true)
-        
+        }
     }
 }
 
