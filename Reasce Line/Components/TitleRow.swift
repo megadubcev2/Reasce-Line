@@ -12,13 +12,7 @@ struct TitleRow: View {
     var name = "Nina Jushkova"
     var body: some View {
         HStack{
-            Button{
-            } label: {
-                Image(systemName: "chevron.backward").font(.system(size: 26).bold()).foregroundColor(Color.blue).padding(15)
-            }
-            
             Spacer()
-            
             VStack(){
                 Text(name).font(.system(size: 25)).bold()
                 Text("Online").font(.caption).foregroundColor(.gray)

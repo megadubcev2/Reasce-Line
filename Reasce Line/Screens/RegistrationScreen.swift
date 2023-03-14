@@ -9,10 +9,7 @@ import SwiftUI
 
 struct RegisrtationScreen: View {
     var body: some View {
-        
         Home()
-            // for light status bar...
-            .preferredColorScheme(.dark)
     }
 }
 
