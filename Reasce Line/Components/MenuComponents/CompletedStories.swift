@@ -9,17 +9,20 @@ import SwiftUI
 
 struct CompletedStories: View {
     var text  = Text("Пройденные")
-    var storyArray = ["R,D","Эрих Мария Ремар","AGADFGAFDGDG","Эрих Мария Ремар","Эрих Мария Ремар","Эрих Мария Ремар","Эрих Мария Ремар","Эрих Мария Ремар","Эрих Мария Ремар"]
+    @StateObject var chatsArray = ChatsController.chatsArray
+    
+//    var storyArray = ["R,D","Эрих Мария Ремар","AGADFGAFDGDG","Эрих Мария Ремар","Эрих Мария Ремар","Эрих Мария Ремар","Эрих Мария Ремар","Эрих Мария Ремар","Эрих Мария Ремар"]
+    
     var body: some View {
-        ZStack {
-            VStack {
-                ScrollView{
-                    ForEach(storyArray, id:\.self){
-                        story in StoryBlock(story: Story(id: "1", author: story, ImageUrl: "https://amiel.club/uploads/posts/2022-03/1647762836_1-amiel-club-p-kartinki-litsa-cheloveka-1.jpg", name: "На Западном фронте без перемен"))
+            ZStack {
+                VStack {
+                    ScrollView{
+                        ForEach(chatsArray.chats, id:\.self){
+                                chat in StoryBlock(chat: chat)
+                            }
                     }
                 }
-            }
-        }
+                }
     }
 }
 
