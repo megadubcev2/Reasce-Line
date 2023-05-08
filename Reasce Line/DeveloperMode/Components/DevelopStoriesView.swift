@@ -1,15 +1,15 @@
 //
-//  ActiveStories.swift
+//  DevelopStoriesView.swift
 //  Reasce Line
 //
-//  Created by Алексей Королёв on 10.03.2023.
+//  Created by Andrew on 18.04.2023.
 //
 
 import SwiftUI
 
-struct ActiveStories: View {
+struct DevelopStoriesView: View {
     var text  = Text("Активные")
-    @StateObject var chatsArray = ChatsController.chatsArray
+    @StateObject var storiesArray = DevelopStoriesArrayController.storiesArray
     
 //    var storyArray = ["R,D","Эрих Мария Ремар","AGADFGAFDGDG","Эрих Мария Ремар","Эрих Мария Ремар","Эрих Мария Ремар","Эрих Мария Ремар","Эрих Мария Ремар","Эрих Мария Ремар"]
     
@@ -17,8 +17,8 @@ struct ActiveStories: View {
             ZStack {
                 VStack {
                     ScrollView{
-                        ForEach(chatsArray.chats, id:\.self){
-                                chat in StoryBlock(chat: chat)
+                        ForEach(storiesArray.stories, id:\.self){
+                                story in DevelopStoryBlockView(story: story)
                             }
                     }
                 }
@@ -26,8 +26,8 @@ struct ActiveStories: View {
     }
 }
 
-struct ActiveStories_Previews: PreviewProvider {
+struct DevelopStoriesView_Previews: PreviewProvider {
     static var previews: some View {
-        ActiveStories()
+        DevelopStoriesView()
     }
 }

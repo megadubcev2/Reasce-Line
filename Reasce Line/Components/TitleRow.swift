@@ -9,16 +9,12 @@ import SwiftUI
 
 struct TitleRow: View {
     var img = URL(string: "https://amiel.club/uploads/posts/2022-03/1647762836_1-amiel-club-p-kartinki-litsa-cheloveka-1.jpg")
-    var name = "Nina Jushkova"
+    var name : String
     var body: some View {
         HStack{
-            Button{
-            } label: {
-                Image(systemName: "chevron.backward").font(.system(size: 26).bold()).foregroundColor(Color.blue).padding(15)
-            }
             
+            Text("     ").font(.system(size: 25)).bold()
             Spacer()
-            
             VStack(){
                 Text(name).font(.system(size: 25)).bold()
                 Text("Online").font(.caption).foregroundColor(.gray)
@@ -40,6 +36,6 @@ struct TitleRow: View {
 
 struct TitleRow_Previews: PreviewProvider {
     static var previews: some View {
-        TitleRow().background(Color("Color"))
+        TitleRow(name : "Нина Жучкова").background(Color("Color"))
     }
 }

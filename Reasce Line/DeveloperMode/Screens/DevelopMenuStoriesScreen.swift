@@ -1,20 +1,21 @@
 //
-//  MenuScreen.swift
+//  menuCreatingStoriesScreen.swift
 //  Reasce Line
 //
-//  Created by Алексей Королёв on 06.02.2023.
+//  Created by Andrew on 18.04.2023.
 //
+
 
 import SwiftUI
 
-struct MenuScreen: View {
+struct DevelopMenuStoriesScreen: View {
     var body: some View {
         NavigationStack {
             TabView {
                 VStack {
                     NavBar(text: Text("Активные"))
                     Spacer()
-                    ActiveStories()
+                    DevelopStoriesView()
                     Spacer()
                 }
                 .tabItem {
@@ -59,8 +60,8 @@ struct MenuScreen: View {
     }
 }
 
-struct MenuScreen_Previews: PreviewProvider {
+struct DevelopMenuSroriesScreen_Previews: PreviewProvider {
     static var previews: some View {
-        MenuScreen()
+        DevelopMenuStoriesScreen()
     }
 }

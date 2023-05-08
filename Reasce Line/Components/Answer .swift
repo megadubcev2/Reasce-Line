@@ -8,18 +8,21 @@
 import SwiftUI
 
 struct Answer_: View {
-    var message: Message
+    var playerAnswer: PlayerAnswer
+    var chat: Chat
     var body: some View {
         Button{
-            
+            //print(chat.storyNodeNow)
+            chat.chooseAnswer(chosenAnswer: playerAnswer)
+            //print(chat.dialogHistory)
         } label: {
-            Text(message.text).foregroundColor(.black).padding()
+            Text(playerAnswer.answerText).foregroundColor(.black).padding()
         }.frame(maxWidth: .infinity).background(.white).cornerRadius(20).padding()
     }
 }
 
 struct Answer__Previews: PreviewProvider {
     static var previews: some View {
-        Answer_(message: Message(id: "12", text: "sdfdsg", received: true, timestamp: Date()))
+        Answer_(playerAnswer: PlayerAnswer(id: 1, answerText: "...", nextStoryNodeId: 0), chat: ChatsController.chatsArray.chats[0])
     }
 }
