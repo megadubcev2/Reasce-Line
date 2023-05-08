@@ -1,14 +1,15 @@
 //
-//  StoriesController.swift
+//  DevelopStoriesController.swift
 //  Reasce Line
 //
-//  Created by Andrew on 13.03.2023.
+//  Created by Andrew on 18.04.2023.
 //
 
 import Foundation
 
-public class StoriesController{
+public class DevelopStoriesController{
     public var stories : [Story]
+    public var storiesArray : StoriesArray
     
     public init(){
         stories = []
@@ -106,30 +107,10 @@ public class StoriesController{
                                          playerAnswerText: "нет ни в коем случае!!!", nextStoryNodeId: 10)
         
         
-        //print(story.allStoryNodesDictionary[1]!.playerAnswersId)
-        //print(story.getPlayerAnswerById(id: 1).getMessage().text + "aaa")
+        //print(story.allStoryNodesDictionary)
         
         stories.append(story)
-//        stories.append(story)
-//        stories.append(story)
-//        stories.append(story)
         
-        var story2 = Story(id: 2, author: "andrew", profileName: "Нина Жучкова", profileImageUrl: "https://amiel.club/uploads/posts/2022-03/1647762836_1-amiel-club-p-kartinki-litsa-cheloveka-1.jpg", firstMessageText: "ПОМОГИТЕ!!!")
-            
-        //2
-        story2.addStoryNode(botMessageTexts: ["эх..."])
-        
-        story2.addPlayerAnswerToStoryNode(storyNodeId: 1,
-                                         playerAnswerText: "Извините у меня обед",
-        nextStoryNodeId: 2)
-        story2.addPlayerAnswerToStoryNode(storyNodeId: 1,
-                                         playerAnswerText: "Пойми все проблемы у тебя в голове",
-        nextStoryNodeId: 2)
-        story2.addPlayerAnswerToStoryNode(storyNodeId: 1,
-                                         playerAnswerText: "Кто ты? Откуда у тебя мой номер???",
-        nextStoryNodeId: 2)
-        
-        stories.append(story2)
-        
+        storiesArray = StoriesArray(stories: stories)
     }
 }

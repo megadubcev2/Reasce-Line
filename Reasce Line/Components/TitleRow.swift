@@ -13,6 +13,7 @@ struct TitleRow: View {
     var body: some View {
         HStack{
             
+            Text("     ").font(.system(size: 25)).bold()
             Spacer()
             VStack(){
                 Text(name).font(.system(size: 25)).bold()

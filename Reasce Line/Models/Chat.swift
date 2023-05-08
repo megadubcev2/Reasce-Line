@@ -15,18 +15,18 @@ public class Chat : ObservableObject{
     @Published var profileName: String
     @Published var profileImageUrl: String
     @Published var storyNodeNow: StoryNode
-    @Published var playerAnswersNow: [PlayerAnswer]
+    @Published var playerAnswersNowId: [Int]
     
     init(story: Story) {
         self.story = story
         self.dialogHistory = []
         self.profileName = story.profileName
         self.profileImageUrl = story.profileImageUrl
-        storyNodeNow =  story.getStoryNodeById(id: story.getFirstStoryNodeId())!
-        playerAnswersNow = []
-        playerAnswersNow = storyNodeNow.playerAnswers
+        storyNodeNow =  story.getStoryNodeById(id: story.getFirstStoryNodeId())
+        playerAnswersNowId = []
+        playerAnswersNowId = storyNodeNow.playerAnswersId
         
-        dialogHistory.append(storyNodeNow.botMessages[0])
+        dialogHistory.append(storyNodeNow.getFirstMessage())
     }
     
     public func getStory() -> Story{
@@ -35,18 +35,18 @@ public class Chat : ObservableObject{
     
     public func chooseAnswer (chosenAnswer: PlayerAnswer){
         //print(chosenAnswer.nextStoryNodeID)
-        playerAnswersNow = []
+        playerAnswersNowId = []
         
         dialogHistory.append(chosenAnswer.getMessage())
         
-        storyNodeNow = story.getStoryNodeById(id: chosenAnswer.nextStoryNodeID)!
+        storyNodeNow = story.getStoryNodeById(id: chosenAnswer.nextStoryNodeId)
         
         for botMessage in storyNodeNow.botMessages {
             //type(message: botMessage)
             dialogHistory.append(botMessage)
         }
         
-        playerAnswersNow = storyNodeNow.playerAnswers
+        playerAnswersNowId = storyNodeNow.playerAnswersId
     }
     
     private func type(message: Message){

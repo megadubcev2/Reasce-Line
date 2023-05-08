@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct DialogScreen: View {
-//    var messageArray = ["лдь", "How are tou", "dfgfgafdgajgndfjgbsjdkfbgsdfbgjbfsgbfdsbgjfdbgjbsfdjgbjsfdbgjbdjksgbfjsdbgfdbjkgbfdjgjagjabdgbdajgbfdgfadg"]
-//    var answerArray = ["лдь", "How are tou","fdgdaкциппкцикци"]
+
     @StateObject var chat : Chat
     
     var body: some View {
@@ -23,10 +22,10 @@ struct DialogScreen: View {
                 }
                 .padding(.top,10)
                 .background(.white)
-//                .cornerRadius(50, corners: [.topLeft,.topRight])
             }.background(Color("Color"))
+            
                 VStack(spacing: -25){
-                    ForEach(chat.playerAnswersNow, id:\.self){
+                    ForEach(chat.playerAnswersNowId.map{chat.getStory().getPlayerAnswerById(id: $0)}, id:\.self){
                         playerAnswer in Answer_(playerAnswer: playerAnswer, chat: chat)
                     }
                 }.background(Color("fMessage")).padding(.top,-9)

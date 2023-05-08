@@ -11,24 +11,31 @@ import Foundation
 // который содержит сообщение которое будет отправлено игроком
 // и последующий узел истории к которому приведет этот ответ
 
-public struct PlayerAnswer: Codable, Hashable {
-    private static var playerAnswersCount : Int = 0
+public class PlayerAnswer: ObservableObject {
     
     public var id : Int
     
-    public var answerText : String
+    @Published var answerText : String
     private var message : Message
-    public var nextStoryNodeID : Int
+    @Published var nextStoryNodeId : Int
     
-    public init(answerText : String, nextStoryNodeID: Int) {
-        id = PlayerAnswer.playerAnswersCount
-        PlayerAnswer.playerAnswersCount = PlayerAnswer.playerAnswersCount + 1
+    public init(id: Int, answerText : String, nextStoryNodeId: Int) {
+        self.id = id
         self.answerText = answerText
         self.message = Message(text: answerText, sender: .player)
-        self.nextStoryNodeID = nextStoryNodeID
+        self.nextStoryNodeId = nextStoryNodeId
     }
     
     public func getMessage() -> Message {
         return message
+    }
+}
+
+extension PlayerAnswer : Hashable {
+    public static func == (lhs: PlayerAnswer, rhs: PlayerAnswer) -> Bool {
+        lhs.id == rhs.id
+    }
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
     }
 }

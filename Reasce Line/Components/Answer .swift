@@ -14,7 +14,7 @@ struct Answer_: View {
         Button{
             //print(chat.storyNodeNow)
             chat.chooseAnswer(chosenAnswer: playerAnswer)
-            print(chat.dialogHistory)
+            //print(chat.dialogHistory)
         } label: {
             Text(playerAnswer.answerText).foregroundColor(.black).padding()
         }.frame(maxWidth: .infinity).background(.white).cornerRadius(20).padding()
@@ -23,6 +23,6 @@ struct Answer_: View {
 
 struct Answer__Previews: PreviewProvider {
     static var previews: some View {
-        Answer_(playerAnswer: PlayerAnswer(answerText: "...", nextStoryNodeID: 0), chat: ChatsController.chatsArray.chats[0])
+        Answer_(playerAnswer: PlayerAnswer(id: 1, answerText: "...", nextStoryNodeId: 0), chat: ChatsController.chatsArray.chats[0])
     }
 }

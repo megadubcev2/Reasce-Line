@@ -13,7 +13,8 @@ struct SettingsScreen: View {
                 SimpleToggle(name: "Музыка")
                 SimpleToggle(name: "Звук")
                 NavigationLink {
-                                     RegisrtationScreen()
+                                     //RegisrtationScreen()
+                                    DevelopMenuStoriesScreen()
                                  } label: {
                                      Text("Режим разработчика").foregroundColor(.white).frame(maxWidth: .infinity,alignment: .leading).padding().background(.black)
                 }
