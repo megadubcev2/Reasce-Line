@@ -12,7 +12,15 @@ public class ChatsController{
     private static var chats : [Chat] = storiesController.stories.map{Chat(story: $0)}
     public static var chatsArray = ChatsArray(chats: chats)
     
-
+    public static func update(storiesArray : StoriesArray){
+        var newChats = storiesArray.stories.map{Chat(story: $0)}
+        chats = newChats
+        chatsArray.chats.removeAll()
+        chats.forEach{
+            chat in chatsArray.chats.append(chat)
+        }
+        
+    }
 
     
 //    public init(){

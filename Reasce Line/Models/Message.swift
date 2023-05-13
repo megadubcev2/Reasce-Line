@@ -10,18 +10,18 @@ import Foundation
 public struct Message: Codable, Hashable{
     public static var messagesCount = 0
     
-    public var id : Int
+    public var id : UUID
     public var text: String
     public var sender: Sender
-    public var timeToWrite: Int
-    public var timeToWait: Int
+    public var timeToWrite: Double
+    public var timeToWait: Double
     
-    public init(text: String, sender: Sender, timeToWait: Int = 1) {
-        id = Message.messagesCount
+    public init(text: String, sender: Sender, timeToWait: Double = 1.0) {
+        id = UUID()//Message.messagesCount
         Message.messagesCount = Message.messagesCount + 1
         self.text = text
         self.sender = sender
-        self.timeToWrite = 1 + text.count/10
+        self.timeToWrite = 0.1 + Double(text.count)/15
         self.timeToWait = timeToWait
     }
 }

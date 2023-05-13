@@ -136,7 +136,7 @@ struct Login : View {
                         Image(systemName: "envelope.fill")
                             .foregroundColor(.white)
                         
-                        TextField("Email Address", text: self.$email)
+                        TextField("Login", text: self.$email)
                     }
                     
                     Divider().background(Color.white.opacity(0.5))
@@ -185,10 +185,26 @@ struct Login : View {
             
             // Button...
             
-            Button(action: {
+//            Button(action: {
+//                //if(email == "aestarodubtsev@edu.hse.ru" )
+//            })
+            if(email.lowercased() == "andrew" && pass == "123"){
+                NavigationLink {
+                                    DevelopMenuStoriesScreen()
+                                 } label: {
+                                Text("LOGIN")
+                                         .foregroundColor(.white)
+                                         .fontWeight(.bold)
+                                         .padding(.vertical)
+                                         .padding(.horizontal, 50)
+                                         .clipShape(Capsule())
+                                         // shadow...
+                                         .shadow(color: Color.white.opacity(0.1), radius: 5, x: 0, y: 5)
+                                         .opacity(self.index == 0 ? 1 : 0)
+                }
                 
-            }) {
-                
+            }
+            else{
                 Text("LOGIN")
                     .foregroundColor(.white)
                     .fontWeight(.bold)
@@ -197,9 +213,10 @@ struct Login : View {
                     .clipShape(Capsule())
                     // shadow...
                     .shadow(color: Color.white.opacity(0.1), radius: 5, x: 0, y: 5)
+                    .opacity(self.index == 0 ? 1 : 0)
             }
             // moving view down..
-            .opacity(self.index == 0 ? 1 : 0)
+            //.opacity(self.index == 0 ? 1 : 0)
         }
     }
 }
@@ -221,7 +238,7 @@ struct SignUP : View {
                         Image(systemName: "envelope.fill")
                             .foregroundColor(.white)
                         
-                        TextField("Email Address", text: self.$email)
+                        TextField("Login", text: self.$email)
                     }
                     
                     Divider().background(Color.white.opacity(0.5))
