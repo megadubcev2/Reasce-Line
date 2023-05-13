@@ -114,10 +114,12 @@ public class StoriesController{
 //        stories.append(story)
 //        stories.append(story)
         
-        var story2 = Story(id: 2, author: "andrew", profileName: "Нина Жучкова", profileImageUrl: "https://amiel.club/uploads/posts/2022-03/1647762836_1-amiel-club-p-kartinki-litsa-cheloveka-1.jpg", firstMessageText: "ПОМОГИТЕ!!!")
+        var story2 = Story(id: 2, author: "andrew", profileName: "Нина Жучкова", profileImageUrl: "https://sun9-75.userapi.com/impg/4NPeEpozulMmMYbsTAJcLXKxC-ayzeYmFYgyLQ/WiGvyukOJKY.jpg?size=900x900&quality=95&sign=62986f09151b84413ec63ec709e1ff72&c_uniq_tag=nZiUHdbNTB5oA6Em998-4zLybBE4q2LIQ2T70k7Tclg&type=album", firstMessageText: "ПОМОГИТЕ!!!")
             
         //2
         story2.addStoryNode(botMessageTexts: ["эх..."])
+        
+        story2.addStoryNode(botMessageTexts: ["ПОМОГИТЕ!!!"])
         
         story2.addPlayerAnswerToStoryNode(storyNodeId: 1,
                                          playerAnswerText: "Извините у меня обед",
@@ -126,6 +128,19 @@ public class StoriesController{
                                          playerAnswerText: "Пойми все проблемы у тебя в голове",
         nextStoryNodeId: 2)
         story2.addPlayerAnswerToStoryNode(storyNodeId: 1,
+                                         playerAnswerText: "Кто ты? Откуда у тебя мой номер???",
+        nextStoryNodeId: 2)
+        
+        story2.addPlayerAnswerToStoryNode(storyNodeId: 2,
+                                         playerAnswerText: "Начать заново", nextStoryNodeId: 3)
+        
+        story2.addPlayerAnswerToStoryNode(storyNodeId: 3,
+                                         playerAnswerText: "Извините у меня обед",
+        nextStoryNodeId: 2)
+        story2.addPlayerAnswerToStoryNode(storyNodeId: 3,
+                                         playerAnswerText: "Пойми все проблемы у тебя в голове",
+        nextStoryNodeId: 2)
+        story2.addPlayerAnswerToStoryNode(storyNodeId: 3,
                                          playerAnswerText: "Кто ты? Откуда у тебя мой номер???",
         nextStoryNodeId: 2)
         

@@ -10,7 +10,7 @@ import Foundation
 
 // узел истории, в которой находятся сообщения от бота которые он напишет в данный момент
 // и 1-3 варианта ответа от игрока
-public class StoryNode : Identifiable, ObservableObject {
+public class StoryNode : Identifiable, ObservableObject, Codable {
     
     public var id: Int
     @Published var botMessages: [Message]
@@ -22,7 +22,26 @@ public class StoryNode : Identifiable, ObservableObject {
         self.playerAnswersId = playerAnswersId
     }
     
-    public func deleteMessage(messageId : Int){
+    enum CodingKeys: CodingKey {
+        case id, botMessages, playerAnswersId
+    }
+    
+    required public init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+     
+        id = try values.decode(Int.self, forKey: .id)
+        botMessages = try values.decode([Message].self, forKey: .botMessages)
+        playerAnswersId = try values.decode([Int].self, forKey: .playerAnswersId)
+    }
+     
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(id, forKey: .id)
+        try container.encode(botMessages, forKey: .botMessages)
+        try container.encode(playerAnswersId, forKey: .playerAnswersId)
+    }
+    
+    public func deleteMessage(messageId : UUID){
         print("aaa")
         botMessages.removeAll{
             $0.id == messageId

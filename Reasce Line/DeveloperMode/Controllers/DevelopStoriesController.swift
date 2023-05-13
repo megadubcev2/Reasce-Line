@@ -111,6 +111,26 @@ public class DevelopStoriesController{
         
         stories.append(story)
         
+        var story2 = Story(id: 2, author: "andrew", profileName: "Нина Жучкова", profileImageUrl: "https://amiel.club/uploads/posts/2022-03/1647762836_1-amiel-club-p-kartinki-litsa-cheloveka-1.jpg", firstMessageText: "ПОМОГИТЕ!!!")
+            
+        //2
+        story2.addStoryNode(botMessageTexts: ["эх..."])
+        
+        story2.addPlayerAnswerToStoryNode(storyNodeId: 1,
+                                         playerAnswerText: "Извините у меня обед",
+        nextStoryNodeId: 2)
+        story2.addPlayerAnswerToStoryNode(storyNodeId: 1,
+                                         playerAnswerText: "Пойми все проблемы у тебя в голове",
+        nextStoryNodeId: 2)
+        story2.addPlayerAnswerToStoryNode(storyNodeId: 1,
+                                         playerAnswerText: "Кто ты? Откуда у тебя мой номер???",
+        nextStoryNodeId: 2)
+        
+        story2.addPlayerAnswerToStoryNode(storyNodeId: 2,
+                                         playerAnswerText: "Начать заново", nextStoryNodeId: 1)
+        
+        stories.append(story2)
+        
         storiesArray = StoriesArray(stories: stories)
     }
 }

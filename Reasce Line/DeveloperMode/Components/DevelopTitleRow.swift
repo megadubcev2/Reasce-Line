@@ -1,27 +1,30 @@
 //
-//  TitleRow.swift
+//  DevelopTitleRow.swift
 //  Reasce Line
 //
-//  Created by Алексей Королёв on 05.02.2023.
+//  Created by Andrew on 13.05.2023.
 //
+
+
 
 import SwiftUI
 
-struct TitleRow: View {
-    @StateObject var chat : Chat
+struct DevelopTitleRow: View {
+    var img : String
+    var name : String
     var body: some View {
         HStack{
             
             Text("     ").font(.system(size: 25)).bold()
             Spacer()
             VStack(){
-                Text(chat.profileName).font(.system(size: 25)).bold()
-                Text(chat.status).font(.caption).foregroundColor(.gray)
+                Text(name).font(.system(size: 25)).bold()
+                Text("Online").font(.caption).foregroundColor(.gray)
             }
             
             Spacer()
             
-            AsyncImage(url: URL(string: chat.profileImageUrl)){
+            AsyncImage(url: URL(string: img)){
                 image in image.resizable().aspectRatio(contentMode: .fill).aspectRatio(contentMode: .fill)
                     .frame(width: 40, height: 40)
                     .cornerRadius(40)
@@ -33,9 +36,8 @@ struct TitleRow: View {
     }
 }
 
-struct TitleRow_Previews: PreviewProvider {
+struct DevelopTitleRow_Previews: PreviewProvider {
     static var previews: some View {
-        Text("a")
-        //TitleRow(chat : "Нина Жучкова")
+        DevelopTitleRow(img: "https://amiel.club/uploads/posts/2022-03/1647762836_1-amiel-club-p-kartinki-litsa-cheloveka-1.jpg", name : "Нина Жучкова")
     }
 }

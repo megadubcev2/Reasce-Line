@@ -59,7 +59,7 @@ struct BotAnswerCreatorView: View {
                                     DevelopBotMessagesScreen(storyNode: story.getStoryNodeById(id: storyNodeId))
                                         .toolbar{
                                             ToolbarItemGroup(placement: .principal, content: {
-                                                TitleRow(name: story.profileName)
+                                                DevelopTitleRow(img: story.profileImageUrl, name: story.profileName)
                                             })
                                         }
                                 } label: {
@@ -68,10 +68,10 @@ struct BotAnswerCreatorView: View {
                             }
                             
                             NavigationLink {
-                                DevelopBotMessagesScreen(storyNode: story.getStoryNodeById(id:  story.addStoryNode(botMessageTexts: [])))
+                                DevelopBotMessagesScreen(storyNode: story.getStoryNodeById(id:  story.addStoryNode(botMessageTexts: [], needAddPlayerAnswer : true)))
                                     .toolbar{
                                         ToolbarItemGroup(placement: .principal, content: {
-                                            TitleRow(name: story.profileName)
+                                            DevelopTitleRow(img: story.profileImageUrl, name: story.profileName)
                                         })
                                     }.onAppear{
                                         changeStoryNode(newStoryNodeId: story.getLastNewStoryNodeId())
@@ -141,7 +141,7 @@ struct BotAnswerCreatorView: View {
 
 struct BotAnswerCreatorView_Previews: PreviewProvider {
     static var previews: some View {
-        var story = Story(id: 1, author: "Andrew" , profileName: "Эрих Мария Ремарк", profileImageUrl: "https://amiel.club/uploads/posts/2022-03/1647762836_1-amiel-club-p-kartinki-litsa-cheloveka-1.jpg", firstMessageText: "На Западном фронте без перемен")
+        let story = Story(id: 1, author: "Andrew" , profileName: "Эрих Мария Ремарк", profileImageUrl: "https://amiel.club/uploads/posts/2022-03/1647762836_1-amiel-club-p-kartinki-litsa-cheloveka-1.jpg", firstMessageText: "На Западном фронте без перемен")
         BotAnswerCreatorView(story: story, storyNodeId : 0, nestingLevel: 0, lastPlayerAnswer: nil)
     }
 }

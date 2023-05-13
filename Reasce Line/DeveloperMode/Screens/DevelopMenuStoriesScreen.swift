@@ -29,7 +29,7 @@ struct DevelopMenuStoriesScreen: View {
                 VStack {
                     NavBar(text: Text("Новые"))
                     Spacer()
-                    NewStories()
+                    DevelopStoriesView()
                     Spacer()
                 }
                 .tabItem {
@@ -43,7 +43,7 @@ struct DevelopMenuStoriesScreen: View {
                 VStack {
                     NavBar(text: Text("Завершенные"))
                     Spacer()
-                    CompletedStories()
+                    DevelopStoriesView()
                     Spacer()
                 }
                 .tabItem {

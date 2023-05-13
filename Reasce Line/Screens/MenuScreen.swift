@@ -14,7 +14,7 @@ struct MenuScreen: View {
                 VStack {
                     NavBar(text: Text("Активные"))
                     Spacer()
-                    ActiveStories()
+                    ActiveStories(chatsArray: ChatsController.chatsArray)
                     Spacer()
                 }
                 .tabItem {
@@ -28,7 +28,7 @@ struct MenuScreen: View {
                 VStack {
                     NavBar(text: Text("Новые"))
                     Spacer()
-                    NewStories()
+                    NewStories(chatsArray: ChatsController.chatsArray)
                     Spacer()
                 }
                 .tabItem {
@@ -42,7 +42,7 @@ struct MenuScreen: View {
                 VStack {
                     NavBar(text: Text("Завершенные"))
                     Spacer()
-                    CompletedStories()
+                    CompletedStories(chatsArray: ChatsController.chatsArray)
                     Spacer()
                 }
                 .tabItem {

@@ -47,7 +47,7 @@ struct DevelopBotMessagesScreen: View {
 
         }
     
-    public func deleteMessage(messageId : Int){
+    public func deleteMessage(messageId : UUID){
         DispatchQueue.main.asyncAfter(deadline: .now()){
             storyNode.deleteMessage(messageId: messageId)
             updateScreen()

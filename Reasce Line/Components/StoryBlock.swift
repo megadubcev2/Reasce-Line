@@ -14,7 +14,7 @@ struct StoryBlock: View {
             DialogScreen(chat: chat)
                          .toolbar{
                              ToolbarItemGroup(placement: .principal, content: {
-                                 TitleRow(name: chat.profileName)
+                                 TitleRow(chat: chat)
                              })
                          }
                  } label: {

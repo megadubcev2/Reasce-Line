@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class Story : ObservableObject{
+public class Story : ObservableObject, Codable{
 
     //, Identifiable, Codable{
     
@@ -45,8 +45,47 @@ public class Story : ObservableObject{
         self.firstStoryNodeId = 1
         
         self.firstStoryNodeId = addStoryNode(botMessageTexts: [firstMessageText])
+    }
+    enum CodingKeys: CodingKey {
+        case id, author, profileName, profileImageUrl, storyNodesCount, playerAnswersCount,
+             allStoryNodesDictionary, allPlayerAnswers, emptyStoryNode, emptyPlayerAnswer,
+             firstStoryNodeId
+            
+    }
+    
+    required public init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+     
+        id = try values.decode(Int.self, forKey: .id)
+        author = try values.decode(String.self, forKey: .author)
+        profileName = try values.decode(String.self, forKey: .profileName)
+        profileImageUrl = try values.decode(String.self, forKey: .profileImageUrl)
         
+        storyNodesCount = try values.decode(Int.self, forKey: .storyNodesCount)
+        playerAnswersCount = try values.decode(Int.self, forKey: .playerAnswersCount)
+        allStoryNodesDictionary = try values.decode([Int: StoryNode].self, forKey: .allStoryNodesDictionary)
+        allPlayerAnswers = try values.decode([Int: PlayerAnswer].self, forKey: .allPlayerAnswers)
         
+        emptyStoryNode = try values.decode(StoryNode.self, forKey: .emptyStoryNode)
+        emptyPlayerAnswer = try values.decode(PlayerAnswer.self, forKey: .emptyPlayerAnswer)
+        firstStoryNodeId = try values.decode(Int.self, forKey: .firstStoryNodeId)
+    }
+     
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(id, forKey: .id)
+        try container.encode(author, forKey: .author)
+        try container.encode(profileName, forKey: .profileName)
+        try container.encode(profileImageUrl, forKey: .profileImageUrl)
+        
+        try container.encode(storyNodesCount, forKey: .storyNodesCount)
+        try container.encode(playerAnswersCount, forKey: .playerAnswersCount)
+        try container.encode(allStoryNodesDictionary, forKey: .allStoryNodesDictionary)
+        try container.encode(allPlayerAnswers, forKey: .allPlayerAnswers)
+        
+        try container.encode(emptyStoryNode, forKey: .emptyStoryNode)
+        try container.encode(emptyPlayerAnswer, forKey: .emptyPlayerAnswer)
+        try container.encode(firstStoryNodeId, forKey: .firstStoryNodeId)
     }
     
     
@@ -68,7 +107,7 @@ public class Story : ObservableObject{
     }
     
     
-    public func addStoryNode(botMessageTexts : [String]) -> Int{
+    public func addStoryNode(botMessageTexts : [String], needAddPlayerAnswer : Bool = false) -> Int{
         
         storyNodesCount = storyNodesCount + 1
         
@@ -79,8 +118,9 @@ public class Story : ObservableObject{
             
         var storyNode = StoryNode(id: storyNodesCount, botMessages: botMessages, playerAnswersId: [])
         allStoryNodesDictionary[storyNodesCount] = storyNode
-        addPlayerAnswerToStoryNode(storyNodeId: storyNode.id, playerAnswerText: "")
-        
+        if(needAddPlayerAnswer){
+            addPlayerAnswerToStoryNode(storyNodeId: storyNode.id, playerAnswerText: "")
+        }
         return storyNode.id
     }
     

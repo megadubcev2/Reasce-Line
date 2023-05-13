@@ -30,6 +30,7 @@
 		499D9ED92A03358E008C34AC /* SearchScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499D9ED82A03358D008C34AC /* SearchScrollView.swift */; };
 		49A0C82C29FF467600096B99 /* BotAnswerCreatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A0C82B29FF467600096B99 /* BotAnswerCreatorView.swift */; };
 		49A0C82E29FF7B4B00096B99 /* PlayerAnswerCreatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A0C82D29FF7B4B00096B99 /* PlayerAnswerCreatorView.swift */; };
+		49AB4E122A0EFEC6004F5396 /* DevelopTitleRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AB4E112A0EFEC6004F5396 /* DevelopTitleRow.swift */; };
 		49CBF2272A076275003687A8 /* DevelopBotMessagesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CBF2262A076275003687A8 /* DevelopBotMessagesScreen.swift */; };
 		49CBF2292A076968003687A8 /* DevelopMessageBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CBF2282A076968003687A8 /* DevelopMessageBubble.swift */; };
 		B403CA4929939CCC00F9CFBA /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B403CA4829939CCC00F9CFBA /* SettingsScreen.swift */; };
@@ -75,6 +76,7 @@
 		499D9ED82A03358D008C34AC /* SearchScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScrollView.swift; sourceTree = "<group>"; };
 		49A0C82B29FF467600096B99 /* BotAnswerCreatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotAnswerCreatorView.swift; sourceTree = "<group>"; };
 		49A0C82D29FF7B4B00096B99 /* PlayerAnswerCreatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerAnswerCreatorView.swift; sourceTree = "<group>"; };
+		49AB4E112A0EFEC6004F5396 /* DevelopTitleRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevelopTitleRow.swift; sourceTree = "<group>"; };
 		49CBF2262A076275003687A8 /* DevelopBotMessagesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevelopBotMessagesScreen.swift; sourceTree = "<group>"; };
 		49CBF2282A076968003687A8 /* DevelopMessageBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevelopMessageBubble.swift; sourceTree = "<group>"; };
 		B403CA4829939CCC00F9CFBA /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
@@ -125,7 +127,6 @@
 		4904867A297FFFD4007075BF /* Reasce Line */ = {
 			isa = PBXGroup;
 			children = (
-				4996A04F29EE174A00C946A2 /* Jsons */,
 				4995874029EDE56F00204947 /* DeveloperMode */,
 				4926984F29BF62B00075D503 /* Controllers */,
 				4904867B297FFFD4007075BF /* Reasce_LineApp.swift */,
@@ -186,13 +187,6 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		4996A04F29EE174A00C946A2 /* Jsons */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Jsons;
-			sourceTree = "<group>";
-		};
 		4996A05029EE1E8700C946A2 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,6 +197,7 @@
 				499D9ED82A03358D008C34AC /* SearchScrollView.swift */,
 				499BDE872A0619A50088CC7A /* AddPlayerAnswerButton.swift */,
 				49CBF2282A076968003687A8 /* DevelopMessageBubble.swift */,
+				49AB4E112A0EFEC6004F5396 /* DevelopTitleRow.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -353,6 +348,7 @@
 				B403CA4929939CCC00F9CFBA /* SettingsScreen.swift in Sources */,
 				4904867C297FFFD4007075BF /* Reasce_LineApp.swift in Sources */,
 				49CBF2272A076275003687A8 /* DevelopBotMessagesScreen.swift in Sources */,
+				49AB4E122A0EFEC6004F5396 /* DevelopTitleRow.swift in Sources */,
 				499BDE882A0619A50088CC7A /* AddPlayerAnswerButton.swift in Sources */,
 				B4A6B5522990FF7700B87E09 /* DialogScreen.swift in Sources */,
 				4996A04E29EE0FF300C946A2 /* DevelopStoriesArrayController.swift in Sources */,
